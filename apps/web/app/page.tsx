@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col max-w-2xlg mx-auto">
-      <main className="pt-52 flex flex-col gap-4 items-center justify-center min-h-dvh text-center">
+      <main className="pt-8 xl:pt-52 flex flex-col gap-4 items-center justify-center min-h-dvh text-center">
         <h1 className="flex gap-4 text-2xl">Notes</h1>
         <form
           action={createNote}
