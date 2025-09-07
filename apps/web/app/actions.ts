@@ -1,11 +1,11 @@
 "use server";
 
-import { container } from "@/container";
+import { inject } from "@/inject";
 import { NoteService } from "@solid-next/types";
 import { revalidatePath } from "next/cache";
 
 export async function createNote(formData: FormData) {
-  const notes = container.resolve<NoteService>(NoteService);
+  const notes = inject<NoteService>(NoteService);
 
   const content = formData.get("content");
 

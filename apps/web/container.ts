@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { container } from "tsyringe";
+import { container, InjectionToken } from "tsyringe";
 import { NoteService } from "@solid-next/types";
 import { DatabaseNoteService } from "@solid-next/services";
 

@@ -1,9 +1,9 @@
-import { container } from "@/container";
 import { NoteService } from "@solid-next/types";
 import { createNote } from "./actions";
+import { inject } from "@/inject";
 
 export default async function Home() {
-  const notes = container.resolve<NoteService>(NoteService);
+  const notes = inject<NoteService>(NoteService);
 
   const all = await notes.readAll();
 
@@ -29,7 +29,7 @@ export default async function Home() {
           >
             Save Note
           </button>
-        </form>{" "}
+        </form>
         <div className="flex flex-col gap-4 w-full max-w-md">
           {all.map((note) => (
             <div
@@ -39,7 +39,7 @@ export default async function Home() {
               {note.content}
             </div>
           ))}
-        </div>{" "}
+        </div>
       </main>
     </div>
   );
